@@ -58,4 +58,9 @@ public class Scripture
     {
         return _words.All(w => w.IsHidden());
     }
+
+    public Reference GetReference()
+    {
+        return _reference;
+    }
 }
