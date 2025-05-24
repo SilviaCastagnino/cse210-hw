@@ -6,12 +6,12 @@ class Program
     {
         Reference reference = new Reference("Proverbs", 3, 5, 6);
         Scripture scripture = new Scripture(reference,
-            "Trust in the Lord with all your heart and do not lean on your own understanding.");
+            "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.");
 
         do
         {
             Console.Clear();
-            Console.WriteLine(scripture.GetDisplayText());
+            Console.WriteLine(reference.GetDisplayText() + " " + scripture.GetDisplayText());
             Console.WriteLine("\nPress Enter to hide words or 'quit' to exit");
 
             string input = Console.ReadLine();

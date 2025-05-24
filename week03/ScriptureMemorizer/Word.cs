@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 public class Word
 {
@@ -14,17 +13,17 @@ public class Word
 
     public void Hide()
     {
-        _isHidden = false;
+        _isHidden = true;
     }
 
     public void Show()
     {
-        _isHidden = true;
+        _isHidden = false;
     }
 
     public bool IsHidden()
     {
-        return _text.StartsWith("_");
+        return _isHidden;
     }
 
     public string GetDisplayText()

@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 public class Scripture
 {
@@ -15,21 +13,45 @@ public class Scripture
 
     public void HideRandomWords(int numberToHide)
     {
-        Random random = new Random();
-        var visibleWords = _words.Where(w => !w.IsHidden()).ToList();
-
-        int wordsToHide = Math.Min(numberToHide, visibleWords.Count);
-        for (int i = 0; i < wordsToHide; i++)
+        for (int i = 0; i < numberToHide; i++)
         {
-            int index = random.Next(visibleWords.Count);
-            visibleWords[index].Hide();
-            visibleWords.RemoveAt(index);
+            Random random = new Random();
+            int randomNumber = random.Next(0, _words.Count());
+            if (IsCompletelyHidden())
+            {
+                break;
+            }
+            else if (_words[randomNumber].IsHidden())
+            {
+                i--;
+            }
+            else
+            {
+                _words[randomNumber].Hide();
+            }
         }
     }
 
     public string GetDisplayText()
     {
-        return $"{_reference.GetDisplayText()}\n{string.Join(" ", _words.Select(w => w.GetDisplayText()))}";
+        string result = "";
+        foreach (var item in _words)
+        {
+            if (item.IsHidden())
+            {
+                foreach (var letter in item.GetDisplayText())
+                {
+                    result += "_";
+                }
+            }
+            else
+            {
+                result += item.GetDisplayText();
+            }
+            result += " ";
+        }
+
+        return result;
     }
 
     public bool IsCompletelyHidden()
