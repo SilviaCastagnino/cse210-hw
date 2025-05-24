@@ -27,7 +27,7 @@ class Program
         while (!scriptures[randomScripture].IsCompletelyHidden());
 
         Console.Clear();
-        Console.WriteLine(scriptures[randomScripture].GetDisplayText());
+        Console.WriteLine(scriptures[randomScripture].GetReference().GetDisplayText() + " " + scriptures[randomScripture].GetDisplayText());
         Console.WriteLine("\nAll words are hidden. Program finished.");
     }
 }
