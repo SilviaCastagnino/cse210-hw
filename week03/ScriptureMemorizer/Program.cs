@@ -1,3 +1,4 @@
+/*To exceed the requirements and show creativity I added a list of scriptures. The program will choose random scripture from the list.*/
 using System;
 
 class Program
