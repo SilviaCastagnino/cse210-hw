@@ -16,13 +16,13 @@ class Program
         order2.AddProduct(new Product("Avocado", "2321", 3.50, 5));
         order2.AddProduct(new Product("Sushi", "2111", 25, 2));
 
-
+        Console.WriteLine($"The list of the products is: {order1.GetProduct()}");
         Console.WriteLine($"The total cost is: {order1.CalculateTotalCost()}$");
         Console.WriteLine($"The packing label is: {order1.GetPackingLabel()}");
         Console.WriteLine($"The shipping label is: {order1.GetShippingLabel()}\n");
+        Console.WriteLine($"The list of the products is: {order2.GetProduct()}");
         Console.WriteLine($"The total cost is: {order2.CalculateTotalCost()}$");
         Console.WriteLine($"The packing label is: {order2.GetPackingLabel()}");
         Console.WriteLine($"The shipping label is: {order2.GetShippingLabel()}\n");
-
     }
 }

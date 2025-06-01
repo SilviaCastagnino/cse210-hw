@@ -15,6 +15,11 @@ public class Product
         _productQuantity = productQuantity;
     }
 
+    public string GetProductName()
+    {
+        return _productName;
+    }
+
     public double GetTotalCost()
     {
         return _productPrice * _productQuantity;

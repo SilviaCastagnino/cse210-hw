@@ -44,4 +44,13 @@ public class Order
         _products.Add(product);
     }
 
+    public string GetProduct()
+    {
+        string result = "";
+        foreach (Product product in _products)
+        {
+            result += $"{product.GetProductName()} ";
+        }
+        return result;
+    }
 }
